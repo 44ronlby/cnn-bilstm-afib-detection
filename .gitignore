@@ -1,30 +1,45 @@
-# Virtual Environments
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python Virtual Environments
 venv/
 .venv/
 env/
 
-# Python Cache
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
 
-# Deep Learning / AI specific ignores
-data/
-datasets/
-*.h5
+# Data Files (Do NOT commit raw/processed ECG signals)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+*.npy
+*.csv
+*.dat
+*.hea
+*.atr
+
+# Model Weights & Artifacts
+saved_models/*
+!saved_models/.gitkeep
 *.keras
-*.pt
-*.pth
-saved_models/
-checkpoints/
+*.h5
+*.pkl
+*.ckpt
 
-# IDE files
+# Output Figures
+outputs/*
+!outputs/.gitkeep
+
+# IDE & OS Files
 .vscode/
 .idea/
 .DS_Store
+Thumbs.db
 
-data/raw/\* 
-data/processed/\* 
-saved\_models/\* 
-!saved\_models/.gitkeep
+# Environment variables & secrets
+.env
