@@ -1,0 +1,30 @@
+# Virtual Environments
+venv/
+.venv/
+env/
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Deep Learning / AI specific ignores
+data/
+datasets/
+*.h5
+*.keras
+*.pt
+*.pth
+saved_models/
+checkpoints/
+
+# IDE files
+.vscode/
+.idea/
+.DS_Store
+
+data/raw/\* 
+data/processed/\* 
+saved\_models/\* 
+!saved\_models/.gitkeep

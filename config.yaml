@@ -1,0 +1,39 @@
+# Configuration for Atrial Fibrillation Detection Pipeline
+
+paths:
+  raw_data:
+    mitbih_dir: "data/raw/mitbih_afib/files/"
+    ptbxl_csv: "data/raw/ptbxl_database.csv"
+    ptbxl_signals: "data/raw/ecgeq-500hzsrfava.npy"
+
+  processed_data:
+    dir: "data/processed/"
+    x_train_bal: "data/processed/X_train_bal.npy"
+    y_train_bal: "data/processed/y_train_bal.npy"
+    x_test: "data/processed/X_test.npy"
+    y_test: "data/processed/y_test.npy"
+
+  models:
+    save_dir: "saved_models/"
+    scaler_path: "saved_models/scaler.pkl"
+    checkpoint_path: "saved_models/cnn_bilstm_ckpt.keras"
+    final_model_path: "saved_models/MabuhAI.keras"
+
+  outputs:
+    results_dir: "outputs/"
+
+preprocessing:
+  target_fs: 360          # Resample all ECG signals to 360 Hz
+  window_sec: 10          # 10-second segments (3600 samples)
+  mitbih_downsample: 300  # Normal samples downsampling limit
+  ptbxl_orig_fs: 500      # PTB-XL original frequency
+  ptbxl_lead_index: 1     # Lead II extraction (index 1)
+  test_split_step: 5      # Deterministic 1:4 split ratio (80/20 train/test)
+  smote_random_state: 42
+
+training:
+  batch_size: 64
+  epochs: 100
+  learning_rate: 0.001
+  patience: 5
+  val_split: 0.2
